@@ -146,8 +146,9 @@ def copy_all_files_flat_and_log(source_folder, destination_folder, omit_files=No
 
 # Example usage:
 copy_all_files_flat_and_log(
-    r'D:\supports\assignment\sukumar-advaith\repo\Jiraboard_demo_test\Jiraboard_demo_test\src',
-    r'D:\temp\destFolder',  # Log files and project structure file will be created in this folder, and files will be stored in 'all-files' subfolder
-    omit_files=['Testing*', '*.java'],  # Patterns to omit: all files starting with 'Testing' and all Java files
-    omit_folders=['test', 'docs']  # Folders to omit
+    # r'D:\Applications\pratice\ReactJs\my-app',
+    r'D:\supports\assignment\sukumar-advaith\repo\Jiraboard_demo_test\Jiraboard_demo_test',
+    r'D:\temp\destFolder\backend',  # Log files and project structure file will be created in this folder, and files will be stored in 'all-files' subfolder
+    omit_files=['package-lock*', 'README*','.gitignore'],  # Patterns to omit: all files starting with 'Testing' and all Java files
+    omit_folders=['.idea','target','node_modules','.git']  # Folders to omit
 )
