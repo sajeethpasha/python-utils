@@ -227,12 +227,13 @@ def copy_all_files_flat_and_log(source_folders, destination_folder, omit_files=N
 # Example usage:
 copy_all_files_flat_and_log(
     {
-        r'backend-code': r'D:\supports\assignment\sukumar-advaith\repo\Jiraboard_demo_test\Jiraboard_demo_test',
-        r'frontend-code': r'D:\Applications\pratice\ReactJs\my-app'
+        # r'backend-code': r'D:\supports\assignment\sukumar-advaith\repo\Jiraboard_demo_test\Jiraboard_demo_test',
+        # r'frontend-code': r'D:\Applications\pratice\ReactJs\my-app',
+        r'grc-saas-events-broker': r'D:\supports\Dhanush\code\temp\2024-08-23-2\grc-saas-events-broker',
     },
     r'D:\temp\destFolder',
-    omit_files=['package-lock*', 'README*','.gitignore'],  # Patterns to omit files
-    omit_folders=['.idea','target','node_modules','.git']  # Patterns to omit folders
+    omit_files=['package-lock*', 'README*','.gitignore','.*','Docker*', 'gradle*','settings*','*.sh','*.xml','*.config','*.options','*.md',],  # Patterns to omit files
+    omit_folders=['.*','.idea','target','node_modules','.git*','.cra','.vscode','helm','gradle','test','build','bin']  # Patterns to omit folders
 )
 
 # omit_files Example:
