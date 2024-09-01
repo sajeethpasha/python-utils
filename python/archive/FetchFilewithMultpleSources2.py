@@ -182,7 +182,7 @@ def copy_all_files_flat_and_log(source_folders, destination_folder, omit_files=N
 # Example usage:
 copy_all_files_flat_and_log(
     {
-        r'grc-saas-events-broker': r'D:\supports\Dhanush\code\temp\2024-08-28\grc-saas-events-broker',
+        r'grc-saas-events-broker': r'D:\supports\Dhanush\code\temp\2024-08-30\grc-saas-evnts-broker',
     },
     r'D:\temp\destFolder',
     omit_files=['package-lock*', 'README*','.gitignore','.*','Docker*', 'gradle*','settings*','*.sh','*.xml','*.config','*.options','*.md',],  # Patterns to omit files
