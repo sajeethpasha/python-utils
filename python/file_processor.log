@@ -269,3 +269,34 @@
 2024-10-12 02:15:57,884 - INFO - Generated JSON log file without paths: D:\temp\destFolder\copy_log_no_paths_20241012-react-app_part1.json
 2024-10-12 02:15:57,884 - INFO - Saved project structure to: D:\temp\destFolder\project_structure_react-app.txt
 2024-10-12 02:15:57,885 - INFO - Processing completed without any errors.
+2024-10-31 22:48:22,952 - INFO - Cleared destination folder: D:\temp\destFolder
+2024-10-31 22:48:22,952 - INFO - Created destination folder: D:\temp\destFolder
+2024-10-31 22:48:22,954 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze
+2024-10-31 22:48:22,955 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\exception
+2024-10-31 22:48:22,955 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\Explorer.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\Explorer.java
+2024-10-31 22:48:22,956 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\util
+2024-10-31 22:48:22,956 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\Maze.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\Maze.java
+2024-10-31 22:48:22,956 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\resources
+2024-10-31 22:48:22,956 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\exception\MazeLoaderException.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\exception\MazeLoaderException.java
+2024-10-31 22:48:22,957 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\util\MazeUtil.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\util\MazeUtil.java
+2024-10-31 22:48:22,957 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\resources\Maze1.txt to D:\temp\destFolder\maze-exercise\src\main\resources\Maze1.txt
+2024-10-31 22:48:22,957 - INFO - Generated JSON log file: D:\temp\destFolder\copy_log_20241031-maze-exercise_part1.json
+2024-10-31 22:48:22,958 - INFO - Generated JSON log file without paths: D:\temp\destFolder\copy_log_no_paths_20241031-maze-exercise_part1.json
+2024-10-31 22:48:22,959 - INFO - Saved project structure to: D:\temp\destFolder\project_structure_maze-exercise.txt
+2024-10-31 22:48:22,959 - INFO - Processing completed without any errors.
+2024-10-31 23:00:52,046 - INFO - Cleared destination folder: D:\temp\destFolder
+2024-10-31 23:00:52,046 - INFO - Created destination folder: D:\temp\destFolder
+2024-10-31 23:00:52,047 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze
+2024-10-31 23:00:52,049 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\Explorer.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\Explorer.java
+2024-10-31 23:00:52,049 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\exception
+2024-10-31 23:00:52,050 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\Maze.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\Maze.java
+2024-10-31 23:00:52,050 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\util
+2024-10-31 23:00:52,050 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\Main.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\Main.java
+2024-10-31 23:00:52,051 - INFO - Created directory: D:\temp\destFolder\maze-exercise\src\main\resources
+2024-10-31 23:00:52,051 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\exception\MazeLoaderException.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\exception\MazeLoaderException.java
+2024-10-31 23:00:52,051 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\java\uk\gov\dwp\maze\util\MazeUtil.java to D:\temp\destFolder\maze-exercise\src\main\java\uk\gov\dwp\maze\util\MazeUtil.java
+2024-10-31 23:00:52,052 - INFO - Copied text file: D:\supports\others\maze-exercise\src\main\resources\Maze1.txt to D:\temp\destFolder\maze-exercise\src\main\resources\Maze1.txt
+2024-10-31 23:00:52,052 - INFO - Generated JSON log file: D:\temp\destFolder\copy_log_20241031-maze-exercise_part1.json
+2024-10-31 23:00:52,052 - INFO - Generated JSON log file without paths: D:\temp\destFolder\copy_log_no_paths_20241031-maze-exercise_part1.json
+2024-10-31 23:00:52,053 - INFO - Saved project structure to: D:\temp\destFolder\project_structure_maze-exercise.txt
+2024-10-31 23:00:52,053 - INFO - Processing completed without any errors.

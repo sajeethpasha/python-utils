@@ -14,7 +14,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 CONFIG = {
     "source_folders": {
         # "grc-saas-events-broker": "D:\supports\Dhanush\code\temp\2024-10-11\grc-saas-events-broker"
-          "react-app": "D:\Applications\pratice\ReactJs\my-app\src"
+          "maze-exercise": r"D:\supports\others\maze-exercise",
+        #   "mynt-remittance-standard-push":r"D:\sajeeth\mynt\funds\Remittance\code\mynt-remittance-standard-push"
         
     },
     "destination_folder": "D:/temp/destFolder",
