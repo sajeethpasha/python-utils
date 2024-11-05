@@ -7,15 +7,14 @@ import re
 import chardet
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import yaml  # Ensure PyYAML is installed
 
 # ---------------------------- Configuration Section ---------------------------- #
 
 # Define your configuration parameters here
 CONFIG = {
     "source_folders": {
-        # "grc-saas-events-broker": "D:\\supports\\Dhanush\\code\\temp\\2024-10-11\\grc-saas-events-broker"
-        "maze-exercise": r"D:\supports\others\maze-exercise",
+        # "grc-saas-events-broker": "D:\supports\Dhanush\code\temp\2024-10-11\grc-saas-events-broker"
+          "maze-exercise": r"D:\supports\others\maze-exercise",
         #   "mynt-remittance-standard-push":r"D:\sajeeth\mynt\funds\Remittance\code\mynt-remittance-standard-push"
         
     },
@@ -30,15 +29,18 @@ CONFIG = {
     ],
     "max_files_per_json": 100,
     "max_json_size_mb": 10,
+    "logging_file": "file_processor.log",
     "error_log_file": "error_log.txt"
 }
 
 # ---------------------------- End of Configuration ---------------------------- #
 
-# Configure logging to output only to the console
+# Configure logging
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    filename=CONFIG["logging_file"],
+    filemode='a',
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    level=logging.INFO
 )
 
 def generate_tree_structure(rootdir, prefix=""):
@@ -335,13 +337,10 @@ def copy_all_files_and_log(source_folders, destination_folder, omit_files=None, 
             split_logs = split_log_data(log_data, max_files_per_json)
             split_logs_without_paths = split_log_data(log_data_without_paths, max_files_per_json)
 
-            json_log_file_paths = []  # To store paths of all JSON logs
-
             for idx, split_log in enumerate(split_logs):
                 timestamp = datetime.now().strftime('%Y%m%d')
                 log_file = f"copy_log_{timestamp}-{app_name}_part{idx+1}.json"
                 log_file_path = os.path.join(destination_folder, log_file)
-                json_log_file_paths.append(log_file_path)  # Add to list
                 try:
                     with open(log_file_path, 'w', encoding='utf-8') as log_f:
                         json.dump(split_log, log_f, indent=4)
@@ -358,7 +357,6 @@ def copy_all_files_and_log(source_folders, destination_folder, omit_files=None, 
                 timestamp = datetime.now().strftime('%Y%m%d')
                 log_file = f"copy_log_no_paths_{timestamp}-{app_name}_part{idx+1}.json"
                 log_file_path = os.path.join(destination_folder, log_file)
-                json_log_file_paths.append(log_file_path)  # Add to list
                 try:
                     with open(log_file_path, 'w', encoding='utf-8') as log_f:
                         json.dump(split_log, log_f, indent=4)
@@ -371,7 +369,7 @@ def copy_all_files_and_log(source_folders, destination_folder, omit_files=None, 
                 if check_json_size(log_file_path, max_json_size_mb):
                     logging.warning(f"JSON file {log_file_path} exceeds the size limit of {max_json_size_mb} MB.")
 
-            # Generate project structure
+            # Generate and save project structure
             project_structure = generate_tree_structure(source_folder)
             project_structure_file_path = os.path.join(destination_folder, f"project_structure_{app_name}.txt")
             try:
@@ -382,40 +380,6 @@ def copy_all_files_and_log(source_folders, destination_folder, omit_files=None, 
             except Exception as e:
                 logging.error(f"Failed to write project structure file {project_structure_file_path}: {e}")
                 error_log.append(f"Failed to write project structure file {project_structure_file_path}: {e}")
-
-            # ------------------ New Section: Create -o1 File in YAML ------------------ #
-
-            o1_file_name = f"{app_name}-o1.yaml"
-            o1_file_path = os.path.join(destination_folder, o1_file_name)
-            try:
-                o1_content = {
-                    "project_structure": project_structure,
-                    "project_json": []
-                }
-
-                for json_log_path in json_log_file_paths:
-                    try:
-                        with open(json_log_path, 'r', encoding='utf-8') as json_f:
-                            json_content = json.load(json_f)
-                        o1_content["project_json"].append({
-                            "log_file": os.path.basename(json_log_path),
-                            "content": json_content
-                        })
-                    except Exception as e:
-                        logging.error(f"Failed to read JSON log file {json_log_path} for -o1 file: {e}")
-                        o1_content["project_json"].append({
-                            "log_file": os.path.basename(json_log_path),
-                            "error": f"Failed to include JSON log {json_log_path}: {e}"
-                        })
-
-                with open(o1_file_path, 'w', encoding='utf-8') as o1_file:
-                    yaml.dump(o1_content, o1_file, sort_keys=False)
-                logging.info(f"Created -o1 YAML file: {o1_file_path}")
-            except Exception as e:
-                logging.error(f"Failed to create -o1 YAML file {o1_file_path}: {e}")
-                error_log.append(f"Failed to create -o1 YAML file {o1_file_path}: {e}")
-
-            # ------------------ End of New Section ------------------ #
 
         except Exception as e:
             error_message = f"Error during processing of {app_name}: {e}. No files or logs created."
@@ -431,7 +395,7 @@ def copy_all_files_and_log(source_folders, destination_folder, omit_files=None, 
             print(f"Errors were encountered during execution. Check '{error_log_path}' for details.")
         except Exception as e:
             logging.error(f"Failed to write error log file {error_log_path}: {e}")
-            print(f"Errors were encountered during execution, but failed to write error log file '{error_log_path}'. Check console for details.")
+            print(f"Errors were encountered during execution, but failed to write error log file '{error_log_path}'. Check '{CONFIG['logging_file']}' for details.")
     else:
         print("Processing completed without any errors.")
         logging.info("Processing completed without any errors.")
