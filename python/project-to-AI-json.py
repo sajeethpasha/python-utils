@@ -15,18 +15,22 @@ import yaml  # Ensure PyYAML is installed
 CONFIG = {
     "source_folders": {
         # "grc-saas-events-broker": "D:\\supports\\Dhanush\\code\\temp\\2024-10-11\\grc-saas-events-broker"
-        "maze-exercise": r"D:\supports\others\maze-exercise",
+        # "calculator": r"D:\Applications\pratice\ReactJs\calculator",
+        #    "gcp": r"D:\Applications\pratice\python\django\myproject",
+        "srta-tzc-demo": r"D:\Org\excelensia\neology\codes\srta-tzc-demo"
+        #    "gcp-pubsub": r"D:\Applications\supports-projects\saikumar\github\springboot-pubsub-master",
+        
         #   "mynt-remittance-standard-push":r"D:\sajeeth\mynt\funds\Remittance\code\mynt-remittance-standard-push"
         
     },
     "destination_folder": "D:/temp/destFolder",
     "omit_files": [
         "package-lock*", "README*", ".gitignore", ".*", "Docker*", "gradle*",
-        "settings*", "*.sh", "*.xml", "*.config", "*.options", "*.md"
+        "settings*", "*.sh", "*.xml", "*.config", "*.options", "*.log","*.bat","*.md","*.sqlite3","*.json"
     ],
     "omit_folders": [
         ".*", ".idea", "target", "node_modules", ".git*", ".cra", ".vscode",
-        "helm", "gradle", "test", "build", "bin"
+        "helm", "gradle", "test", "build", "bin","frontend"
     ],
     "max_files_per_json": 100,
     "max_json_size_mb": 10,
